@@ -12,7 +12,7 @@ Aplicación que conecta a los padres de familia durante el recorrido de la ruta 
 
 * #### [Product Backlog](https://docs.google.com/spreadsheets/d/10dLQ6jbe8sD65__kV7P61c03G7wlL94gkVDqgge35eg/edit?usp=sharing)
 
-* ##### [Mokups](https://drive.google.com/file/d/1w2L0Ajtm5s6FaX6Y2_y-WYvAcb706pFT/view?usp=sharing)
+* ##### [Mokups](https://app.moqups.com/IF5eE5igtJ/view/page/ae8fe8eb0)
 
 
 
