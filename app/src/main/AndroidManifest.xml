@@ -8,19 +8,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MinticJeisson2">
-        <activity android:name="com.example.apprutasmintic.Padres2"></activity>
-        <activity android:name="com.example.apprutasmintic.Padres1" />
-        <activity android:name="com.example.apprutasmintic.Monitor2" />
-        <activity android:name="com.example.apprutasmintic.Monitor1" />
-        <activity android:name="com.example.apprutasmintic.ActivityForgotPass" />
-        <activity android:name="com.example.apprutasmintic.MainActivity">
+        android:theme="@style/Theme.AppMinticRutas">
+
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Padres2" />
+        <activity android:name=".Padres1"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar">
+        </activity>
+
+        <activity android:name=".Monitor2" />
+
+        <activity android:name=".Monitor1"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar">
+        </activity>
+
+        <activity android:name=".ActivityForgotPass" />
+        <activity android:name=".MainActivity"/>
+        
     </application>
 
 </manifest>

@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="anterior" />
+            android:text="@string/previous" />
 
         <TextView
             android:id="@+id/textView13"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="siguiente" />
+            android:text="@string/next" />
 
     </LinearLayout>
 
@@ -82,7 +82,8 @@
             android:id="@+id/btnTerminarRuta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="terminar ruta" />
+            android:backgroundTint="@color/secondaryColor"
+            android:text="@string/btn_terminar_ruta" />
     </LinearLayout>
 
 </LinearLayout>

@@ -28,9 +28,9 @@ public class Monitor2 extends AppCompatActivity {
         tvTipoViaje=findViewById(R.id.texTituloCamino);
         btnTerminarRuta = findViewById(R.id.btnTerminarRuta);
         if (modo.equals("hacia")){
-            tvTipoViaje.setText(tvTipoViaje.getText()+" El colegio");
+            tvTipoViaje.append(" El colegio");
         }else if (modo.equals("desde")){
-            tvTipoViaje.setText(tvTipoViaje.getText()+" Casa");
+            tvTipoViaje.append(" Casa");
         }
 
         ivLastOne.setOnClickListener(new View.OnClickListener() {

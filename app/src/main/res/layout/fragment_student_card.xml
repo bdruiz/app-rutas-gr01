@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
-    android:background="?attr/colorSecondary"
+    android:background="@color/graytheme"
     tools:context="com.example.apprutasmintic.studentCardFrag">
 
     <LinearLayout
@@ -61,13 +61,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ausente" />
+            android:backgroundTint="#C2185B"
+            android:text="@string/btn_ausente" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Recogido" />
+            android:backgroundTint="#00b248"
+            android:text="@string/btn_presente" />
     </LinearLayout>
 </LinearLayout>
