@@ -2,4 +2,35 @@
     <string name="app_name">AppRutasMintic</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Contraseña</string>
+    <string name="forgot_password">¿Olvido su contraseña?</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+
+    <string name="welcome">Bienvenido!</string>
+    <string name="invalid_login">Usuario o Contraseña Invalidos</string>
+    <string name="login_failed">"Login failed"</string>
+
+
+    <string name="btn_hacia_colegio">Ruta al Colegio</string>
+    <string name="btn_desde_colegio">Ruta desde el Colegio</string>
+    <string name="btn_generar_novedad">Generar Novedad</string>
+    <string name="btn_wapp_monitora">Whatsapp Monitora</string>
+    <string name="btn_regresar">Regresar</string>
+    <string name="send_pwd">Enviar Contraseña</string>
+    <string name="tex_send_forgot_pwd">Escriba su email</string>
+    <string name="btn_terminar_ruta">Terminar Ruta</string>
+    <string name="btn_ausente">Ausente</string>
+    <string name="btn_presente">Presente</string>
+
 </resources>

@@ -47,13 +47,14 @@
         android:id="@+id/btnAColegio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ruta al colegio" />
+        android:backgroundTint="@color/secondaryColor"
+        android:text="@string/btn_hacia_colegio" />
 
     <Button
         android:id="@+id/btnDesdeColegio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ruta desde el colegio" />
+        android:text="@string/btn_desde_colegio" />
 
     <LinearLayout
         android:layout_width="match_parent"
