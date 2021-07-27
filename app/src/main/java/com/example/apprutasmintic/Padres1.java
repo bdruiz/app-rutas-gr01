@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +16,7 @@ import android.widget.LinearLayout;
 
 import com.example.apprutasmintic.R;
 
-public class Padres1 extends AppCompatActivity {
+public class Padres1 extends AppCompatActivity implements novedadFrag.NOVEDAD {
 
     Button btnWappMonitora;
     Button btnGenerarNovedad;
@@ -43,11 +45,10 @@ public class Padres1 extends AppCompatActivity {
         btnWappMonitora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(
-                        Intent.ACTION_VIEW, Uri.parse("http://www.w.me/3114802018"));
-                //creo que así es para abrir un whatsapp en navegador, me toca buscar cuando
-                //tenga internet
-                startActivity(intent);
+                String url = "https://api.whatsapp.com/send?phone=" + "573057035528";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
 
             }
         });
@@ -65,14 +66,31 @@ public class Padres1 extends AppCompatActivity {
             public void onClick(View v) {
                 //Acá debo hacer que se abra el fragment de generar novedad a pantalla completa
                 FragmentManager manager = getSupportFragmentManager();
+                lytFragmentNovedad.setVisibility(View.VISIBLE);
                 manager.beginTransaction()
                         .show(manager.findFragmentById(R.id.lytFragmentNovedad))
+                        .addToBackStack(null)
                         .commit();
-                lytFragmentNovedad.setVisibility(View.VISIBLE);
+
                 lytActiPadres1.setVisibility(View.GONE);
+
 
             }
         });
+
+    }
+
+    @Override
+    public void onStringSend(String data) {
+        Log.d("Click listener", "ya en Padres1 se recibió el data " + data);
+        //{Acá se manda esa info a la data base y poner un toast de novedad enviada}
+        FragmentManager manager = getSupportFragmentManager();
+        lytFragmentNovedad.setVisibility(View.GONE);
+        manager.beginTransaction()
+                .hide(manager.findFragmentById(R.id.lytFragmentNovedad))
+                .addToBackStack(null)
+                .commit();
+        lytActiPadres1.setVisibility(View.VISIBLE);
 
     }
 }
