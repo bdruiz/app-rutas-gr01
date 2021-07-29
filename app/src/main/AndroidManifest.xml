@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMinticRutas">
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".view.login.LoginActivity"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
 
         <activity android:name=".ActivityForgotPass" />
         <activity android:name=".MainActivity"/>
-        
+
     </application>
 
 </manifest>

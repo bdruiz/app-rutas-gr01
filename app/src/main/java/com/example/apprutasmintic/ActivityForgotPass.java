@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.apprutasmintic.R;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class ActivityForgotPass extends AppCompatActivity {
 
     Button btnSubmitForgot;
-    EditText etMailForgot;
+    TextInputEditText etMailForgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class ActivityForgotPass extends AppCompatActivity {
             public void onClick(View v) {
                 String Mail = etMailForgot.getText().toString().trim();
                 //esto ya lo mando a la base de datos para que se mande la contraseña al correo
+
             }
         });
     }

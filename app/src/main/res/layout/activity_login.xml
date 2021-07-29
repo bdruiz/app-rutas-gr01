@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".view.login.LoginActivity"
     android:background="@color/login_bk_color"
     android:focusableInTouchMode="true"
     android:gravity="center"
@@ -44,23 +44,41 @@
                     android:layout_alignParentRight="true"/>
             </RelativeLayout>
 
-
-            <EditText
-                android:id="@+id/editTextEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/login_email_hint"
-                android:inputType="textEmailAddress"
-                android:layout_marginTop="48dp"
-                android:maxLines="1" />
+                android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextPassword"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_email_hint"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/white"
+                    android:maxLines="1"  />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/login_password_hint"
-                android:inputType="textPassword"
-                android:maxLines="1" />
+                android:layout_height="match_parent"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_password_hint"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:background="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
 
 
             <TextView
@@ -70,6 +88,7 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:onClick="forgot_pass"
+                android:layout_marginRight="34dp"
                 android:text="@string/forgot_password"
                 android:textColor="@color/themeColor" />
 
@@ -85,6 +104,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/ic_side_bg"/>
     <ImageView
+        android:id="@+id/imgbtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
