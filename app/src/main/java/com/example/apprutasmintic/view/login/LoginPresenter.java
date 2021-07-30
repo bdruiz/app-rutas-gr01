@@ -45,11 +45,10 @@ public class LoginPresenter implements LoginMVP.Presenter {
         } else if (info.getPassword().trim().length() < 6) {
             view.showPasswordError("Contraseña no válida");
 
+        } else {
+            model.validateEmailPassword(info.getEmail(), info.getPassword());
         }
-
-        model.validateEmailPassword(info.getEmail(), info.getPassword());
     }
-
     @Override
     public void forgotpwd() {
         view.showActivity(ActivityForgotPass.class);
