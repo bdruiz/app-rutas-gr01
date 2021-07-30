@@ -9,9 +9,12 @@ import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.apprutasmintic.Padres1;
 import com.example.apprutasmintic.Padres2;
 import com.example.apprutasmintic.R;
 import com.example.apprutasmintic.novedadFrag;
+import com.example.apprutasmintic.view.login.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Padres1Activity extends AppCompatActivity implements Padres1MVP.View, novedadFrag.NOVEDAD {
@@ -52,5 +55,11 @@ public class Padres1Activity extends AppCompatActivity implements Padres1MVP.Vie
     @Override
     public void onStringSend(String data) {
 
+    }
+
+    public void cerrarsesion(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(Padres1Activity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }

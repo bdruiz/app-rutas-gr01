@@ -8,7 +8,8 @@ public interface LoginMVP {
 
         interface Model {
 
-            boolean validateEmailPassword(String email, String password);
+            void validateEmailPassword(String email, String password);
+            boolean isAuthenticated();
             User.Roles getRole(String email);
             void setLoginPresenter(Presenter presenter);
         }
@@ -16,8 +17,11 @@ public interface LoginMVP {
         interface Presenter {
 
             void login();
-            void forgotpwd(); //este lo comenté y el metodo adentro del presenter también y no pasó nada
-            //porque el boton olvidó su contraseña tiene el intent directo
+            void forgotpwd();
+            void authenticate();
+            void authenticationSuccessful();
+            void authenticationFailure(String message);
+
         }
 
         interface View {

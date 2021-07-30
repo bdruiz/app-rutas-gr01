@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.apprutasmintic.R;
+import com.example.apprutasmintic.view.login.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Monitor1 extends AppCompatActivity {
 
@@ -38,5 +40,11 @@ public class Monitor1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void cerrarsesion(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(Monitor1.this, LoginActivity.class);
+        startActivity(intent);
     }
 }

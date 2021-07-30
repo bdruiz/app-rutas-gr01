@@ -42,22 +42,12 @@ public class LoginPresenter implements LoginMVP.Presenter {
                 || info.getPassword().trim().isEmpty()) {
             view.showPasswordError("Contraseña vacia");
 
-        } else if (model.validateEmailPassword(info.getEmail(), info.getPassword())) {
-            User.Roles role = model.getRole(info.getEmail());
-            switch (role) {
-                case PADRE:
-                    view.showActivity(Padres1Activity.class);
-                    break;
-                case MONITORA:
-                    view.showActivity(Monitor1.class);
-                    break;
-                default:
-                    break;
-            }
+        } else if (info.getPassword().trim().length() < 6) {
+            view.showPasswordError("Contraseña no válida");
 
-        } else {
-            view.showErrorMessage("Usuario y contraseña no coinciden");
         }
+
+        model.validateEmailPassword(info.getEmail(), info.getPassword());
     }
 
     @Override
@@ -66,6 +56,40 @@ public class LoginPresenter implements LoginMVP.Presenter {
 
     }
 
+    @Override
+    public void authenticate() {
+        if (model.isAuthenticated()) {
+            openactivity();
+            //view.showActivity(PrincipalActivity.class);
+        }
+    }
+
+    @Override
+    public void authenticationSuccessful() {
+        openactivity();
+        //view.showActivity(PrincipalActivity.class);
+    }
+
+    @Override
+    public void authenticationFailure(String message) {
+        view.showErrorMessage(message);
+    }
+
+    public void openactivity() {
+        LoginInfo info = view.getLoginInfo();
+        User.Roles role = model.getRole(info.getEmail());
+        switch (role) {
+            case PADRE:
+                view.showActivity(Padres1Activity.class);
+                break;
+            case MONITORA:
+                view.showActivity(Monitor1.class);
+                break;
+            default:
+                break;
+        }
+
+    }
 }
 
 

@@ -31,6 +31,11 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        presenter.authenticate();
+        }
 
     private void initUI() {
         presenter = new LoginPresenter(this);
@@ -95,4 +100,6 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
         // msj.show();
 
     }
+
+
 }

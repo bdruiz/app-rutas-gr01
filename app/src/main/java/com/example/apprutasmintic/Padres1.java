@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.apprutasmintic.R;
+import com.example.apprutasmintic.view.login.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Padres1 extends AppCompatActivity implements novedadFrag.NOVEDAD {
 
@@ -93,4 +95,5 @@ public class Padres1 extends AppCompatActivity implements novedadFrag.NOVEDAD {
         lytActiPadres1.setVisibility(View.VISIBLE);
 
     }
+
 }
