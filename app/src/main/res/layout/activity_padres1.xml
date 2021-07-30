@@ -8,7 +8,7 @@
     android:background="?attr/colorOnPrimary"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context="com.example.apprutasmintic.Padres1">
+    tools:context=".view.padres.Padres1Activity">
 
     <LinearLayout
         android:id="@+id/lytActiPadres1"
@@ -60,7 +60,8 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/secondaryColor"
-            android:text="Seguir Ruta" />
+            android:onClick="onSeguirRutaClick"
+            android:text="Seguir Ruta"/>
 
         <Button
             android:id="@+id/btnGenerarNovedad"

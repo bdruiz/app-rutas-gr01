@@ -5,6 +5,7 @@ import android.util.Patterns;
 import com.example.apprutasmintic.ActivityForgotPass;
 import com.example.apprutasmintic.Monitor1;
 import com.example.apprutasmintic.Padres1;
+import com.example.apprutasmintic.view.padres.Padres1Activity;
 import com.example.apprutasmintic.model.entity.User;
 import com.example.apprutasmintic.model.repository.UserRepository;
 
@@ -45,7 +46,7 @@ public class LoginPresenter implements LoginMVP.Presenter {
             User.Roles role = model.getRole(info.getEmail());
             switch (role) {
                 case PADRE:
-                    view.showActivity(Padres1.class);
+                    view.showActivity(Padres1Activity.class);
                     break;
                 case MONITORA:
                     view.showActivity(Monitor1.class);

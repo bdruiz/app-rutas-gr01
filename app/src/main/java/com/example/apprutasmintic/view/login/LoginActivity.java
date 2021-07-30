@@ -52,8 +52,9 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
     }
 
     public void forgot_pass(View view) {
-        Intent intent = new Intent(LoginActivity.this, ActivityForgotPass.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(LoginActivity.this, ActivityForgotPass.class);
+        startActivity(intent);*/
+        presenter.forgotpwd();
     }
 
     @Override
@@ -82,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
 
     @Override
     public void showActivity(Class<? extends AppCompatActivity> type) {
-        Intent intent = new Intent(this, type);
+        Intent intent = new Intent(LoginActivity.this, type);
         startActivity(intent);
 
     }

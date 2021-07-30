@@ -23,6 +23,9 @@
         <activity android:name=".Padres1"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar">
         </activity>
+        <activity android:name=".view.padres.Padres1Activity"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar">
+        </activity>
 
         <activity android:name=".Monitor2" />
 

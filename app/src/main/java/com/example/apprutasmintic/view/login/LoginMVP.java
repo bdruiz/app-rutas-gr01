@@ -16,7 +16,8 @@ public interface LoginMVP {
         interface Presenter {
 
             void login();
-            void forgotpwd();
+            void forgotpwd(); //este lo comenté y el metodo adentro del presenter también y no pasó nada
+            //porque el boton olvidó su contraseña tiene el intent directo
         }
 
         interface View {
