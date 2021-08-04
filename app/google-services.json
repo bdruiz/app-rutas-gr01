@@ -1,36 +1,27 @@
 {
   "project_info": {
     "project_number": "46545849033",
+    "firebase_url": "https://rutasapp-d95b2-default-rtdb.firebaseio.com",
     "project_id": "rutasapp-d95b2",
     "storage_bucket": "rutasapp-d95b2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:46545849033:android:a900257ae7ba04e8135b18",
+        "mobilesdk_app_id": "1:46545849033:android:0df5054477b29364135b18",
         "android_client_info": {
           "package_name": "com.example.apprutasmintic"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "46545849033-1omk6kb4an00mcq5dh9mobmod548p2u3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBNPtUERtgMa4XHsjRT5UC75QSEYePlyp4"
+          "current_key": "AIzaSyDv56JX128JXUecrZCKaTdWuYsmdT8AJ-Q"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "46545849033-1omk6kb4an00mcq5dh9mobmod548p2u3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

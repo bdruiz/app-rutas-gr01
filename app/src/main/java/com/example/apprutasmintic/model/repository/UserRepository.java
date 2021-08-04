@@ -1,5 +1,7 @@
 package com.example.apprutasmintic.model.repository;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.apprutasmintic.model.entity.Assistant;
@@ -11,6 +13,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,19 +27,9 @@ public class UserRepository implements LoginMVP.Model {
 
     private LoginMVP.Presenter loginPresenter;
 
-    private List<User> users;
-
     private FirebaseAuth mAuth;
 
     public UserRepository() {
-        users = Arrays.asList(
-                new Assistant("Monica Jimenez", "monica@correo.com","123456","3000000000", User.Roles.MONITORA,105),
-                new Assistant("Sara Fernadez", "sara@correo.com","123456","3000000001", User.Roles.MONITORA,102),
-                new Parent("Cristian Ramirez", "cristian@correo.com", "123456", "310300301", User.Roles.PADRE, "Calle 123# 12-32"),
-                new Parent("Andrea Perez", "andrea@correo.com", "123456", "310300302", User.Roles.PADRE, "Calle 45#12-34"),
-                new Parent("Juliana Suarez", "juliana@correo.com", "123456", "310300303", User.Roles.PADRE, "Cra 1 #5-25")
-        );
-
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -52,25 +50,52 @@ public class UserRepository implements LoginMVP.Model {
 
 
     @Override
-    public boolean isAuthenticated(){
+    public boolean isAuthenticated() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         return currentUser != null;
     }
 
-    @Override
-    public User.Roles getRole(String email) {
-        for (User user : users) {
-            if (user.getEmail().equals(email)) {
-                return user.getRole();
-            }
-        }
-
-        return null;
-    }
 
     @Override
     public void setLoginPresenter(LoginMVP.Presenter presenter) {
         this.loginPresenter = presenter;
+
+    }
+
+
+    public interface OnGetDataListener {
+        //Se Implementa la interfaz para poder manejar las solicitudes de Firebase de manera Asincrona
+
+        public void onStart();
+
+        public void onSuccess(DataSnapshot snapshot);
+
+        public void onFailed(DatabaseError databaseError);
+    }
+
+
+    @Override
+    public void readUserFirebase(final OnGetDataListener listener) {
+        listener.onStart();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        String uid = currentUser.getUid();
+
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
+        DatabaseReference currentUserRef = usersRef.child(uid);
+
+        currentUserRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                listener.onSuccess(snapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                listener.onFailed(error);
+
+            }
+        });
 
     }
 

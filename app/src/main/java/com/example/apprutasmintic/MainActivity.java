@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.apprutasmintic.R;
+import com.example.apprutasmintic.view.monitor.Monitor1;
 
 public class MainActivity extends AppCompatActivity {
 

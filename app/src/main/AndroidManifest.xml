@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Padres2" />
+        <activity android:name=".view.padres.Padres2" />
         <activity android:name=".Padres1"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar">
         </activity>
@@ -29,7 +29,7 @@
 
         <activity android:name=".Monitor2" />
 
-        <activity android:name=".Monitor1"
+        <activity android:name=".view.monitor.Monitor1"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar">
         </activity>
 

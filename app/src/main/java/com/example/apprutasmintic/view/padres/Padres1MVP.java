@@ -15,12 +15,14 @@ public interface Padres1MVP {
     interface Presenter {
 
         void openActivityPadres2();
+        void sendWhatsAppMonitora();
 
     }
 
     interface View {
 
         void showActivity(Class<? extends AppCompatActivity> type);
+        void openIntentSendWhatApp(String url, String phone);
 
     }
 

@@ -1,14 +1,19 @@
 package com.example.apprutasmintic.view.login;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.apprutasmintic.ActivityForgotPass;
 import com.example.apprutasmintic.R;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -19,6 +24,8 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
     TextInputLayout tilMail, tilPass;
     TextInputEditText tieMail, tiePass;
     ImageView imgbtn;
+    AlertDialog.Builder builder;
+    AlertDialog progressDialog;
     private LoginMVP.Presenter presenter;
 
     @Override
@@ -44,6 +51,8 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
         tiePass = findViewById(R.id.editTextPassword);
         tilPass = findViewById(R.id.textInputPassword);
         imgbtn = findViewById(R.id.imgbtn);
+        progressDialog = getDialogProgressBar().create();
+
 
 
     }
@@ -54,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
         tilMail.setError("");
         tilPass.setError("");
         presenter.login();
+
+
     }
 
     public void forgot_pass(View view) {
@@ -90,6 +101,7 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
     public void showActivity(Class<? extends AppCompatActivity> type) {
         Intent intent = new Intent(LoginActivity.this, type);
         startActivity(intent);
+        Log.i("INFO", "ABRIO ACTIVIDAD");
 
     }
 
@@ -101,5 +113,46 @@ public class LoginActivity extends AppCompatActivity implements LoginMVP.View {
 
     }
 
+    @Override
+    public void showProgressBar() {
+        progressDialog.show();
+
+    }
+
+    @Override
+    public void dimissProgressBar() {
+
+        progressDialog.dismiss();
+    }
+
+
+
+    @Override
+    public Context getContex() {
+        return this ;
+    }
+
+    @Override
+    public void finishactivity() {
+        finish();
+    }
+
+
+    public AlertDialog.Builder getDialogProgressBar() {
+
+        if (builder == null) {
+            builder = new AlertDialog.Builder(this);
+
+            builder.setTitle(R.string.loading);
+
+            final ProgressBar progressBar = new ProgressBar(this);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            progressBar.setLayoutParams(lp);
+            builder.setView(progressBar);
+        }
+        return builder;
+    }
 
 }

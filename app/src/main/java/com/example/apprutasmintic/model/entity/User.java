@@ -3,7 +3,6 @@ package com.example.apprutasmintic.model.entity;
 public class User {
     private String names;
     private String email;
-    private String password;
     private String phone_number;
 
     public enum Roles {
@@ -13,12 +12,19 @@ public class User {
     private Roles role;
 
 
-    public User(String names, String email, String password, String phone_number, Roles role) {
+    public User(String names, String email, String phone_number, Roles role) {
         this.names = names;
         this.email = email;
-        this.password = password;
+
         this.phone_number = phone_number;
         this.role = role;
+    }
+
+    public User() {
+        this.names = "";
+        this.email = "";
+        this.phone_number = "";
+        this.role = null;
     }
 
     public String getNames() {
@@ -37,14 +43,6 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getPhone_number() {
         return phone_number;
     }
@@ -57,4 +55,13 @@ public class User {
         return role;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "names='" + names + '\'' +
+                ", email='" + email + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,9 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.example.apprutasmintic.R;
-import com.example.apprutasmintic.view.login.LoginActivity;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.apprutasmintic.view.padres.Padres2;
 
 public class Padres1 extends AppCompatActivity implements novedadFrag.NOVEDAD {
 

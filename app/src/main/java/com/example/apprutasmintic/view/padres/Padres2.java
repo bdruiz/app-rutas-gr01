@@ -1,4 +1,4 @@
-package com.example.apprutasmintic;
+package com.example.apprutasmintic.view.padres;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.apprutasmintic.Padres1;
 import com.example.apprutasmintic.R;
 
 public class Padres2 extends AppCompatActivity {

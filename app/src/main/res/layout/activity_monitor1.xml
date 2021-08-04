@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="?attr/colorOnPrimary"
-    tools:context="com.example.apprutasmintic.Monitor1">
+    tools:context="com.example.apprutasmintic.view.monitor.Monitor1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,14 +28,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewNombreMonitora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Señorita nieve"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textViewRutaMonitora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ruta 666"

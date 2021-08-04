@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="?attr/colorOnPrimary"
-    tools:context="com.example.apprutasmintic.Padres2">
+    tools:context="com.example.apprutasmintic.view.padres.Padres2">
 
     <LinearLayout
         android:layout_width="match_parent"
