@@ -22,9 +22,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Padres1Activity extends AppCompatActivity implements Padres1MVP.View, novedadFrag.NOVEDAD {
 
-    Button btnSRuta;
-    Button btnGNovedad;
-    Button btnWMonitora;
     TextView tv_Names, tv_Address;
 
 
@@ -42,23 +39,17 @@ public class Padres1Activity extends AppCompatActivity implements Padres1MVP.Vie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_padres1);
-        Log.d("paso", "empece oncreate");
         initUI();
-        Log.d("paso", "termine oncreate");
+
 
     }
 
     private void initUI() {
         presenter = new Padres1Presenter(this);
-        btnSRuta = findViewById(R.id.btnSeguirRuta);
-        btnGNovedad = findViewById(R.id.btnGenerarNovedad);
-        btnWMonitora = findViewById(R.id.btnWappMonitora);
         tv_Address = findViewById(R.id.textViewDireccionPadres);
         tv_Names = findViewById(R.id.textViewNombrePadres);
         tv_Names.setText(UserSharedPreferences.getNames(this));
         tv_Address.setText(UserSharedPreferences.getAddress(this));
-
-
 
         lytFragmentNovedad = findViewById(R.id.lytFragmentNovedad);
         lytActiPadres1 = findViewById(R.id.lytActiPadres1);
@@ -66,22 +57,6 @@ public class Padres1Activity extends AppCompatActivity implements Padres1MVP.Vie
         etNovedad = findViewById(R.id.etNovedad);
         btnEnviarNovedad = findViewById(R.id.btnEnviarNovedad);
 
-        btnSRuta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Padres1Activity.this, Padres2.class);
-                startActivity(intent);
-            }
-        });
-
-        btnWMonitora.setOnClickListener(new View.OnClickListener() {
-
-
-
-            public void onClick(View v) {
-                presenter.sendWhatsAppMonitora();
-            }
-        });
 
 
 
@@ -102,6 +77,7 @@ public class Padres1Activity extends AppCompatActivity implements Padres1MVP.Vie
     public void openIntentSendWhatApp(String url, String phone) {
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url+phone));
+        Log.d("jeisson", "este es buen mensaje?");
         startActivity(i);
     }
 
@@ -121,6 +97,15 @@ public class Padres1Activity extends AppCompatActivity implements Padres1MVP.Vie
 
     }
 
+    public void onGenerarNovedad(View view){
+        Log.d("Jeisson", "boton generar novedad pulsado");
+        presenter.generarNovedad(lytFragmentNovedad, lytActiPadres1);
+    }
+
+    public void onWhatsappMonitora(View view){
+        Log.d("Jeisson", "boton whatsapp");
+        presenter.whatsMonitora();
+    }
    /* @Override
     public void onBackPressed() {
     finish();
