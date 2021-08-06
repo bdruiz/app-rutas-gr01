@@ -1,5 +1,7 @@
 package com.example.apprutasmintic.view.padres;
 
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,13 +15,14 @@ public interface Padres1MVP {
     interface Model {
 
         String numeroMonitora();
+        void subirNovedad(String novedad);
     }
 
     interface Presenter {
 
         void openActivityPadres2();
 
-        void generarNovedad(FragmentContainerView lytFragment, LinearLayout lyt);
+        void generarNovedad(View view,EditText etNovedad);
 
         void whatsMonitora();
     }
@@ -27,7 +30,6 @@ public interface Padres1MVP {
     interface View {
 
         void showActivity(Class<? extends AppCompatActivity> type);
-
         void openIntentSendWhatApp(String url, String phone);
 
     }

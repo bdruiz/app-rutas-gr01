@@ -7,8 +7,8 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="?attr/colorOnPrimary"
-    android:id="@+id/fragment_novedad"
-    tools:context="com.example.apprutasmintic.novedadFrag">
+    android:id="@+id/novFragId"
+    tools:context=".view.padres.novedadFrag">
 
 
     <LinearLayout
@@ -51,18 +51,21 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:ems="10"
+        android:hint="Descripcion de la novedad"
         android:inputType="textPersonName"
-        android:text="Descripcion de la novedad" />
+        android:text=" " />
 
     <Button
         android:id="@+id/btnEnviarNovedad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Generar novedad" />
 
     <Button
         android:id="@+id/btnCancelNovedad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="cancelar" />
 </LinearLayout>

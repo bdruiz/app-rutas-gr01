@@ -1,28 +1,26 @@
 package com.example.apprutasmintic.view.padres;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentContainerView;
-import com.example.apprutasmintic.novedadFrag;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.apprutasmintic.R;
-import com.example.apprutasmintic.view.padres.Padres1Model;
-
-import java.util.zip.Inflater;
 
 public class Padres1Presenter extends AppCompatActivity implements Padres1MVP.Presenter {
 
 
     private final Padres1MVP.View view;
     private final Padres1MVP.Model model;
+    EditText etNovedad;
 
     public Padres1Presenter(Padres1MVP.View view) {
         this.view = view;
@@ -42,27 +40,17 @@ public class Padres1Presenter extends AppCompatActivity implements Padres1MVP.Pr
     }
 
     @Override
+    public void generarNovedad(Padres1MVP.View view,EditText etNovedad) {
+        String novedad = etNovedad.getText().toString().trim();
+        model.subirNovedad(novedad);
+    }
+
+
+    @Override
     public void whatsMonitora() {
         String telefono = model.numeroMonitora();
         Log.d("jeisson", "telefono es: " + telefono);
         view.openIntentSendWhatApp("https://api.whatsapp.com/send?phone=", telefono);
-    }
-
-    @Override
-    public void generarNovedad(FragmentContainerView lytFragmentNovedad, LinearLayout lyt) {
-        //debo hacer aparecer el fragment y desaparecer el layout
-        FragmentManager manager = getSupportFragmentManager();
-        Log.d("jeisson", " voy a hacerlos visibles e invisibles ");
-        lytFragmentNovedad.setVisibility(View.VISIBLE);
-        lyt.setVisibility(View.GONE);
-        Log.d("jeisson", " aca ya lo hice ");
-        //manager.beginTransaction().add(R.id.lytFragmentNovedad, manager.findFragmentById(R.id.fragment_novedad) ,"TagName").commit();
-        /*manager.beginTransaction()
-                .show(manager.findFragmentById(R.id.lytFragmentNovedad))
-                .addToBackStack(null)
-                .commit();*/
-
-
     }
 
 
