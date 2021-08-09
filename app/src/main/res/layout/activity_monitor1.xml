@@ -48,12 +48,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/secondaryColor"
+        android:onClick="onClick"
         android:text="@string/btn_hacia_colegio" />
 
     <Button
         android:id="@+id/btnDesdeColegio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="@string/btn_desde_colegio" />
 
     <LinearLayout
@@ -68,10 +70,10 @@
             app:srcCompat="@drawable/logocolegio" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnCerrarSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="cerrarsesion"
+            android:onClick="onClick"
             android:text="CERRAR SESION"
 
             />
