@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="@color/graytheme"
-    tools:context="com.example.apprutasmintic.studentCardFrag">
+    tools:context=".view.monitor.estudiantesFrag">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,14 +28,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tvEstudianteName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Charmander Gonzalez Hijo"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tvEstudianteAdress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Calle falsa 123"

@@ -1,10 +1,8 @@
-package com.example.apprutasmintic;
+package com.example.apprutasmintic.view.padres;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import com.example.apprutasmintic.R;
@@ -20,12 +18,6 @@ public class Padres2 extends AppCompatActivity {
         setContentView(R.layout.activity_padres2);
         btnCancelSeguirRuta = findViewById(R.id.btnCancelSeguirRuta);
 
-        btnCancelSeguirRuta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Padres2.this, Padres1.class);
-                Padres2.this.finish();
-            }
-        });
+
     }
 }

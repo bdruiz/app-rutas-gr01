@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMinticRutas">
-
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".view.monitor.Monitor2"
+            android:exported="true" />
+        <activity
+            android:name=".view.login.LoginActivity"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,21 +21,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Padres2" />
-        <activity android:name=".Padres1"
-            android:theme="@style/Theme.AppMinticRutas.NoActionBar">
-        </activity>
-
+        <activity android:name=".view.padres.Padres2" />
+        <activity
+            android:name=".view.padres.Padres1Activity"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar"></activity>
         <activity android:name=".Monitor2" />
-
-        <activity android:name=".Monitor1"
-            android:theme="@style/Theme.AppMinticRutas.NoActionBar">
-        </activity>
-
+        <activity
+            android:name=".view.monitor.Monitor1"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar"></activity>
         <activity android:name=".ActivityForgotPass" />
-        <activity android:name=".MainActivity"/>
-        
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

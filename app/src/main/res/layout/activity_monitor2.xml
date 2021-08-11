@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
     android:orientation="vertical"
     android:padding="15dp"
-    android:background="?attr/colorOnPrimary"
     tools:context="com.example.apprutasmintic.Monitor2">
 
     <TextView
@@ -17,13 +17,12 @@
         android:text="Camino a:"
         android:textSize="20sp" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.apprutasmintic.studentCardFrag"
+    <FrameLayout
+        android:id="@+id/flStudentCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        tools:layout="@layout/fragment_student_card" />
+        android:layout_marginTop="10dp">
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,6 +36,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:rotation="180"
+            android:onClick="onClick"
             app:srcCompat="@drawable/vector_right" />
 
         <ImageView
@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="true"
+            android:onClick="onClick"
             app:srcCompat="@drawable/vector_right" />
 
     </LinearLayout>

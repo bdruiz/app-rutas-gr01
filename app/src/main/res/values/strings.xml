@@ -32,5 +32,6 @@
     <string name="btn_terminar_ruta">Terminar Ruta</string>
     <string name="btn_ausente">Ausente</string>
     <string name="btn_presente">Presente</string>
+    <string name="loading">Cargando</string>
 
 </resources>
