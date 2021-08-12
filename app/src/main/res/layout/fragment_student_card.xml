@@ -14,18 +14,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/chinito" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewIMGEstudiante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/chinito" />
+
+            <TextView
+                android:id="@+id/textViewEstudianteCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="1/n"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvEstudianteName"
@@ -40,14 +50,22 @@
                 android:layout_height="wrap_content"
                 android:text="Calle falsa 123"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvEstudianteTelefonoTutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Télefono Tutor: "
+                android:textSize="18sp" />
+
         </LinearLayout>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tvEstudianteNovedad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Novedad: Esta etiqueta la voy a poner invisible a menos que de la base de datos venga una novedad para mostrar y la puse en todo el ancho para que quepa bastante texto"
+        android:text="Novedad:"
         android:justificationMode="inter_word"
         android:textSize="16sp" />
 
@@ -57,7 +75,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/btnausente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -65,11 +83,12 @@
             android:text="@string/btn_ausente" />
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/btnpresente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#00b248"
             android:text="@string/btn_presente" />
     </LinearLayout>
+
 </LinearLayout>

@@ -113,6 +113,8 @@ public class UserSharedPreferences {
 
     }
 
+
+
     public static void deleteAllData(Context ctx) {
         SharedPreferences.Editor editor = getSP(ctx).edit();
         editor.clear();
