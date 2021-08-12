@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.apprutasmintic">
-    <permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMinticRutas">
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+        <activity
+            android:name=".view.map.MapActivity"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar"/>
+            android:exported="true" />
         <activity
             android:name=".view.monitor.Monitor2"
             android:exported="true" />
@@ -25,10 +36,10 @@
         <activity android:name=".view.padres.Padres2" />
         <activity
             android:name=".view.padres.Padres1Activity"
-            android:theme="@style/Theme.AppMinticRutas.NoActionBar"></activity>
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
         <activity
             android:name=".view.monitor.Monitor1"
-            android:theme="@style/Theme.AppMinticRutas.NoActionBar"></activity>
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
         <activity android:name=".ActivityForgotPass" />
         <activity android:name=".MainActivity" />
     </application>

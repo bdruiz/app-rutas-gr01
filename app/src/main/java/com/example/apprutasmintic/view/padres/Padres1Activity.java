@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.apprutasmintic.R;
 import com.example.apprutasmintic.model.repository.UserSharedPreferences;
+import com.example.apprutasmintic.view.map.MapActivity;
 import com.example.apprutasmintic.view.padres.novedadFrag;
 import com.example.apprutasmintic.view.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -56,7 +57,10 @@ public class Padres1Activity extends AppCompatActivity implements Padres1MVP.Vie
     }
 
     public void onSeguirRutaClick(View view) {
-        presenter.openActivityPadres2();
+        //TODO pasar a MVP
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+        //presenter.openActivityPadres2();
     }
 
     @Override
