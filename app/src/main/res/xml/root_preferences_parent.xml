@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/userData">
+        <EditTextPreference
+            app:key="address"
+            app:title="@string/address_title"
+            app:useSimpleSummaryProvider="true" />
+        <Preference
+            app:key="changepwd"
+            app:title="@string/change_pass" />
+    </PreferenceCategory>
+    <!--app:icon="@drawable/outline_settings_24"-->
+
+    <PreferenceCategory app:title="@string/theme_header">
+        <SwitchPreferenceCompat
+            app:key="themedark"
+            app:title="@string/theme_title"
+            app:summaryOff="@string/dark_summary_off"
+            app:summaryOn="@string/dark_summary_on"/>
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory>
+        <Preference
+            app:key="logout"
+            app:title="@string/logout" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

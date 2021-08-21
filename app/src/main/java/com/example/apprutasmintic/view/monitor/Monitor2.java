@@ -69,19 +69,28 @@ public class Monitor2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitor2);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.flStudentCard, new estudiantesFrag()).commit();
+
+
+
+
         studentCard = new Student();
         studentRepo = new StudentRepository();
 
-        tvTipoViaje = findViewById(R.id.texTituloCamino);
+      //  tvTipoViaje = findViewById(R.id.texTituloCamino);
         modo = getIntent().getStringExtra("modo");
-        if (modo.equals("hacia")) {
+        /*if (modo.equals("hacia")) {
             tvTipoViaje.append(" El colegio");
             StudentSharedPreferences.setIDCurrentStudent(this, 1);
         } else if (modo.equals("desde")) {
             tvTipoViaje.append(" Casa");
             StudentSharedPreferences.setIDCurrentStudent(this, 5);
-        }
+        }*/
+        Bundle bundle = new Bundle();
+        bundle.putString("modo", modo);
+
+        estudiantesFrag fragobjest = new estudiantesFrag();
+        fragobjest.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().add(R.id.flStudentCard, fragobjest).commit();
 
 
     }
@@ -181,6 +190,8 @@ public class Monitor2 extends AppCompatActivity {
                 dialog.show();
             }
         }
+        btnpresente.setEnabled(true);
+        btnausente.setEnabled(true);
     }
 
     public void moveBackward() {
@@ -202,6 +213,8 @@ public class Monitor2 extends AppCompatActivity {
                 dialog.show();
             }
         }
+        btnpresente.setEnabled(true);
+        btnausente.setEnabled(true);
 
     }
 
@@ -231,7 +244,7 @@ public class Monitor2 extends AppCompatActivity {
 
 
         Log.i("TEST", "Terminar RUTA");
-
+        finish();
 
         //   btnterminar.setEnabled(false);
     }
@@ -241,8 +254,9 @@ public class Monitor2 extends AppCompatActivity {
 
         studentRepo.readStudent(idStudent, new StudentRepository.OnGetStudentListener() {
             @Override
-            public void onSuccess(Student student) {
+            public void onSuccess(Student student, String id) {
                 studentCard = student;
+                StudentSharedPreferences.setIDtudent(getApplicationContext(),Integer.parseInt(id));
                 Log.i("NUMERO DE ESTU", "" + StudentSharedPreferences.getNumberStudents(getApplicationContext()));
                 Log.i("SA", "" + studentCard.toString());
                 //tvEstudianteAdress.setText(student.getNames());

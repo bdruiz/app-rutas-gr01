@@ -21,7 +21,7 @@ public class StudentRepository {
 
 
 
-        public void onSuccess(Student student);
+        public void onSuccess(Student student, String id);
 
     }
 
@@ -41,7 +41,7 @@ public class StudentRepository {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-               listener.onSuccess(snapshot.getValue(Student.class));
+               listener.onSuccess(snapshot.getValue(Student.class),snapshot.getKey());
                 // Student s =new Student();
                 // snapshot.getValue(s.getClass());
                // Log.i("test", s.toString());

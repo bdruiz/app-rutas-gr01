@@ -5,55 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="8dp"
     android:background="?attr/colorOnPrimary"
     android:id="@+id/novFragId"
     tools:context=".view.padres.novedadFrag">
 
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTituloReistroNovedad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:src="@drawable/monitora" />
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgtituloregistronovedad"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:padding="4dp"
+                android:src="@drawable/nota" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tvtituloregistronovedad"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Profe Marta Gonzalez"
-                android:textSize="24sp" />
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:text="Registra tu novedad"
+                android:textColor="@color/themeColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Monitora Ruta 666"
-                android:textSize="20sp" />
+
         </LinearLayout>
-    </LinearLayout>
 
-    <EditText
-        android:id="@+id/etNovedad"
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="Descripcion de la novedad"
-        android:inputType="textPersonName"
-        android:text=" " />
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="100">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNovedad"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:hint="Descripción de la novedad"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
     <Button
         android:id="@+id/btnEnviarNovedad"
@@ -66,6 +83,9 @@
         android:id="@+id/btnCancelNovedad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/secondaryColor"
         android:onClick="onClick"
         android:text="cancelar" />
+
+
 </LinearLayout>

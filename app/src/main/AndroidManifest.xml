@@ -3,29 +3,45 @@
     package="com.example.apprutasmintic">
 
     <permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_ra"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMinticRutas">
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
-        <meta-data android:name="com.google.android.geo.API_KEY"
+        <activity
+            android:name=".view.settings.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar"></activity>
+        <activity
+            android:name=".view.ValidarAsistenciaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
+
         <activity
             android:name=".view.map.MapActivity"
-            android:theme="@style/Theme.AppMinticRutas.NoActionBar"/>
-            android:exported="true" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
         <activity
             android:name=".view.monitor.Monitor2"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
         <activity
             android:name=".view.login.LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,12 +52,16 @@
         <activity android:name=".view.padres.Padres2" />
         <activity
             android:name=".view.padres.Padres1Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
         <activity
             android:name=".view.monitor.Monitor1"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
-        <activity android:name=".ActivityForgotPass" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".ActivityForgotPass"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppMinticRutas.NoActionBar" />
     </application>
-
+<!--android:roundIcon="@mipmap/ic_launcher_round"-->
 </manifest>

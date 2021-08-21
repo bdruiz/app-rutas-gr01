@@ -12,12 +12,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.apprutasmintic.R;
 
-public class novedadFrag extends Fragment {
-    com.example.apprutasmintic.novedadFrag.NOVEDAD strNovedad;
+public class novedadFrag extends Fragment implements View.OnClickListener{
 
+
+    //com.example.apprutasmintic.novedadFrag.NOVEDAD strNovedad;
+Button btn_generar_novedad;
     /*public interface NOVEDAD {
         void onStringSend(String data);
     }*/
@@ -44,6 +47,8 @@ public class novedadFrag extends Fragment {
                              Bundle savedInstanceState) {
         Log.d("jeisson", " voy a hacer el inflater ");
         View inflater1 = inflater.inflate(R.layout.fragment_novedad, container, false);
+      //  btn_generar_novedad=inflater1.findViewById(R.id.btnEnviarNovedad);
+     //   btn_generar_novedad.setOnClickListener(this);
         return (LinearLayout)inflater1;
     }
 
@@ -53,4 +58,11 @@ public class novedadFrag extends Fragment {
 
     }
 
+    @Override
+    public void onClick(View view) {
+     /*   if (view.getId()==R.id.btnEnviarNovedad){
+            Toast.makeText(getContext(),"Nnanana",Toast.LENGTH_SHORT).show();
+        }
+*/
+    }
 }

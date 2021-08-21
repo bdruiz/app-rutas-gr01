@@ -19,6 +19,7 @@ public class UserSharedPreferences {
     private static final String PREF_UPHONE = "PHONE";
     private static final String PREF_UADDRESS = "ADDRESS";
     private static final String PREF_UROUTE_ID = "ROUTEID";
+    private static final String PREF_USTUDENT_ID = "STUDENTID";
 
 
     static SharedPreferences getSP(Context ctx) {
@@ -89,6 +90,17 @@ public class UserSharedPreferences {
         return getSP(ctx).getString(PREF_UROUTE_ID, "");
     }
 
+    public static void setStudentID(Context ctx, int id) {
+        SharedPreferences.Editor editor = getSP(ctx).edit();
+        editor.putInt(PREF_USTUDENT_ID, id);
+        editor.commit();
+    }
+
+    public static int getStudentID(Context ctx) {
+        return getSP(ctx).getInt(PREF_USTUDENT_ID, 0);
+    }
+
+
     public static void setAllData(Context context, Parent parent) {
 
         SharedPreferences.Editor editor = getSP(context).edit();
@@ -97,6 +109,7 @@ public class UserSharedPreferences {
         editor.putString(PREF_UPHONE, parent.getPhone_number());
         editor.putString(PREF_UROLE, String.valueOf(parent.getRole()));
         editor.putString(PREF_UADDRESS, parent.getAddress());
+        editor.putInt(PREF_USTUDENT_ID,parent.getId_student());
         editor.commit();
 
     }
@@ -109,6 +122,7 @@ public class UserSharedPreferences {
         editor.putString(PREF_UPHONE, assistant.getPhone_number());
         editor.putString(PREF_UROLE, String.valueOf(assistant.getRole()));
         editor.putString(PREF_UROUTE_ID, assistant.getId_route());
+
         editor.commit();
 
     }

@@ -93,8 +93,9 @@ public class LoginPresenter implements LoginMVP.Presenter {
                 if (role.toLowerCase().equals("parent")) {
 
                     String address = snapshot.child("address").getValue(String.class);
-                    Parent parent = new Parent(names, email, phone, User.Roles.PADRE, address);
                     int student_id = snapshot.child("student_id").getValue(Integer.class);
+                    Parent parent = new Parent(names, email, phone, User.Roles.PADRE, address, student_id);
+
                     Log.i("INFO", parent.toString());
                     saveLocalData(parent);
 

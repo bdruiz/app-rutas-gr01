@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorOnPrimary"
+
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context="com.example.apprutasmintic.Monitor2">
-
-    <TextView
-        android:id="@+id/texTituloCamino"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Camino a:"
-        android:textSize="20sp" />
-
+    tools:context="com.example.apprutasmintic.view.monitor.Monitor2">
+    <!--
+        android:background="?attr/colorOnPrimary"-->
+    <!--
+        <TextView
+            android:id="@+id/texTituloCamino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Camino a:"
+            android:textSize="20sp" />
+    -->
     <FrameLayout
         android:id="@+id/flStudentCard"
         android:layout_width="match_parent"

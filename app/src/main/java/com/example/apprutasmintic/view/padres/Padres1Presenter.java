@@ -14,6 +14,9 @@ import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.apprutasmintic.R;
+import com.example.apprutasmintic.model.repository.UserSharedPreferences;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Padres1Presenter extends AppCompatActivity implements Padres1MVP.Presenter {
 
@@ -42,7 +45,10 @@ public class Padres1Presenter extends AppCompatActivity implements Padres1MVP.Pr
     @Override
     public void generarNovedad(Padres1MVP.View view,EditText etNovedad) {
         String novedad = etNovedad.getText().toString().trim();
-        model.subirNovedad(novedad);
+        Log.i("NOVEDAD",novedad);
+
+        //TODO Acomdar Modelo
+        //model.subirNovedad(novedad);
     }
 
 
@@ -52,6 +58,7 @@ public class Padres1Presenter extends AppCompatActivity implements Padres1MVP.Pr
         Log.d("jeisson", "telefono es: " + telefono);
         view.openIntentSendWhatApp("https://api.whatsapp.com/send?phone=", telefono);
     }
+
 
 
 }
