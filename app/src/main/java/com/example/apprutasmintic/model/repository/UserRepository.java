@@ -72,7 +72,7 @@ public class UserRepository implements LoginMVP.Model, SettingsMVP.Model {
     }
 
     @Override
-    public void updateAddressData(String newAddress, OnGetDataListenerUpdateAddr listener) {
+    public void updateAddressData(String newAddress, int IdStudent, OnGetDataListenerUpdateAddr listener) {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         String uid = currentUser.getUid();
 
@@ -83,7 +83,20 @@ public class UserRepository implements LoginMVP.Model, SettingsMVP.Model {
             @Override
             public void onComplete(Task<Void> task) {
                 if (task.isComplete()) {
-                    listener.onSuccess(task);
+
+                    DatabaseReference studentsRef = FirebaseDatabase.getInstance().getReference("students");
+                    DatabaseReference currentstudentRef = studentsRef.child(String.valueOf(IdStudent));
+                    currentstudentRef.child("address").setValue(newAddress).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isComplete()){
+                                listener.onSuccess(task);
+                            }
+
+                        }
+                    });
+
+
                 }
             }
         });

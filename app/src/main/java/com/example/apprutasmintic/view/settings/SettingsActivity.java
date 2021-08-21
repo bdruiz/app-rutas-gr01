@@ -94,7 +94,7 @@ public class SettingsActivity extends AppCompatActivity {
                 signaturePreferenceAddr.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                     @Override
                     public boolean onPreferenceChange(Preference preference, Object newValue) {
-                        presenter.updateAddrOk(newValue.toString().trim(), signaturePreferenceAddr);
+                        presenter.updateAddrOk(newValue.toString().trim(),UserSharedPreferences.getStudentID(getContext()), signaturePreferenceAddr);
 
                         return false;
                     }

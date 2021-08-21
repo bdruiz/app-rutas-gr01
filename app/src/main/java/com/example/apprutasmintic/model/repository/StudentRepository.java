@@ -19,8 +19,6 @@ public class StudentRepository {
 
     public interface OnGetStudentListener {
 
-
-
         public void onSuccess(Student student, String id);
 
     }
@@ -49,6 +47,7 @@ public class StudentRepository {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                Log.i("Firebase", error.toString());
 
             }
         });
@@ -76,7 +75,7 @@ public class StudentRepository {
 
                 @Override
                 public void onCancelled (@NonNull DatabaseError error){
-
+                    Log.i("Firebase", error.toString());
                 }
             });
 

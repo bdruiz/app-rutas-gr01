@@ -38,8 +38,8 @@ public class SettingsPresenter implements SettingsMVP.Presenter{
     }
 
     @Override
-    public void updateAddrOk(String addr, EditTextPreference preferenceaddr) {
-        model.updateAddressData(addr, new UserRepository.OnGetDataListenerUpdateAddr() {
+    public void updateAddrOk(String addr, int idStudent, EditTextPreference preferenceaddr) {
+        model.updateAddressData(addr,idStudent, new UserRepository.OnGetDataListenerUpdateAddr() {
             @Override
             public void onSuccess(Task task) {
                 preferenceaddr.setText(addr);
@@ -66,7 +66,7 @@ public class SettingsPresenter implements SettingsMVP.Presenter{
 
             @Override
             public void onFailed(DatabaseError databaseError) {
-                Log.e("Firebase",databaseError+"");
+                Log.e("Firebase",databaseError.toString());
 
             }
         });
@@ -97,7 +97,7 @@ public class SettingsPresenter implements SettingsMVP.Presenter{
 
             @Override
             public void onFailed(DatabaseError databaseError) {
-                Log.e("Firebase",databaseError+"");
+                Log.e("Firebase",databaseError.toString()+"");
 
             }
         });

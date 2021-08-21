@@ -12,7 +12,7 @@ public interface SettingsMVP {
     interface Model {
 
         void logout();
-        void updateAddressData(String newAddress, UserRepository.OnGetDataListenerUpdateAddr listener);
+        void updateAddressData(String newAddress, int idStudent, UserRepository.OnGetDataListenerUpdateAddr listener);
         void updateRouteIdData(String newRoute, UserRepository.OnGetDataListenerUpdateRoute listener);
         void updatePassword(String oldpass, String newPass, UserRepository.OnGetDataListenerUpdatepwd listener);
 
@@ -23,7 +23,7 @@ public interface SettingsMVP {
         void logout();
 
         void logoutConfirmed();
-        void updateAddrOk(String addr, EditTextPreference preference);
+        void updateAddrOk(String addr, int id, EditTextPreference preference);
 
         void updateRouteIdOk(String strRoute, EditTextPreference signaturePreferenceRoute);
         void updatepassOk(String oldpass, String newPass);
